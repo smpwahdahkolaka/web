@@ -1729,12 +1729,12 @@ function extendSemesterOptions(selectEl, max = SEMESTER_MAX) {
     <label>Jenjang:</label><br>
     <select id="inputJenjang" style="width:90%; margin-bottom:10px;">
   <option value=""></option>
-  <option value="A1">1A</option>
-  <option value="A2">1B</option>
-  <option value="A3">2A</option>
-  <option value="A4">2B</option>
-  <option value="A5">3A</option>
-  <option value="A6">3B</option>
+  <option value="A1">7 Putra</option>
+  <option value="A2">7 Putri</option>
+  <option value="A3">8 Putra</option>
+  <option value="A4">8 Putri</option>
+  <option value="A5">9 Putra</option>
+  <option value="A6">9 Putri</option>
   </select>
 
     <div style="margin-top:10px; display:flex; justify-content:space-between; gap:8px;">
@@ -3335,7 +3335,7 @@ async function loadSantriData() {
   overlay.style.display = "flex";
 
   // ===== util jenjang (tetap) =====
-  const JENJANG_MAX = Number(window.JENJANG_MAX ?? 8);
+  const JENJANG_MAX = Number(window.JENJANG_MAX ?? 6);
 
   const parseJenjang = (v) => {
     const m = /^A(\d+)$/.exec(String(v || "").trim());
@@ -3778,12 +3778,12 @@ function callFillAyatOptions(selectEl, surahId, selectedAyat=""){
           <td class="col-nama">${santri.nama ?? ""}${subTanggal}</td>
           <td>
             <select class="jenjang">
-    <option value="A1" ${jenNow === 'A1' ? 'selected' : ''}>1A</option>
-    <option value="A2" ${jenNow === 'A2' ? 'selected' : ''}>1B</option>
-    <option value="A3" ${jenNow === 'A3' ? 'selected' : ''}>2A</option>
-    <option value="A4" ${jenNow === 'A4' ? 'selected' : ''}>2B</option>
-    <option value="A5" ${jenNow === 'A5' ? 'selected' : ''}>3A</option>
-    <option value="A6" ${jenNow === 'A6' ? 'selected' : ''}>3B</option>
+    <option value="A1" ${jenNow === 'A1' ? 'selected' : ''}>7 Putra</option>
+    <option value="A2" ${jenNow === 'A2' ? 'selected' : ''}>7 Putri</option>
+    <option value="A3" ${jenNow === 'A3' ? 'selected' : ''}>8 Putra</option>
+    <option value="A4" ${jenNow === 'A4' ? 'selected' : ''}>8 Putri</option>
+    <option value="A5" ${jenNow === 'A5' ? 'selected' : ''}>9 Putra</option>
+    <option value="A6" ${jenNow === 'A6' ? 'selected' : ''}>9 Putri</option>
   </select>
           </td>
           <td>
@@ -10064,7 +10064,7 @@ function renderSessionHTML(s){
 
 <script>
   // ====== KONFIG (opsional dari window.*) ======
-  const JENJANG_MAX = Number(window.JENJANG_MAX ?? 8);             // 34 default; 0 = tanpa batas atas
+  const JENJANG_MAX = Number(window.JENJANG_MAX ?? 6);             // 34 default; 0 = tanpa batas atas
   const JENJANG_SAFETY_CAP = Number(window.JENJANG_SAFETY_CAP ?? 1000); // darurat bila tanpa batas
 
   // ====== Helper jenjang dinamis ======
